@@ -13,5 +13,9 @@ class User:
 
 
 user = User(email='test@mail.ru', password='*****')
-json_user = json.dumps(user)  # TypeError: Object of type User is not JSON serializable
-print(json_user)
+json_user = json.dumps({
+    'email': user.email,
+    'password': user.password
+})
+print(json_user)  # {"email": "test@mail.ru", "password": "*****"}
+
