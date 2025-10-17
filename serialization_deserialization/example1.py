@@ -1,4 +1,5 @@
 import datetime
+import json
 
 
 class User:
@@ -12,4 +13,5 @@ class User:
 
 
 user = User(email='test@mail.ru', password='*****')
-print(user)  # <class '__main__.User'>: email - test@mail.ru, created_at - 2025-10-17 16:29:37.435367
+json_user = json.dumps(user)  # TypeError: Object of type User is not JSON serializable
+print(json_user)
