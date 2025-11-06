@@ -48,4 +48,4 @@ def start_training():
     print(neuron.process_input_data(input_data))  # 6.209990000282116
     
 
-# start_training()
+start_training()
