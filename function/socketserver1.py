@@ -7,7 +7,7 @@ class EchoHandler(StreamRequestHandler):
             self.wfile.write(b'GOT:' + line)
             
 
-class EchoHandler(StreamRequestHandler):
+class EchoHandler2(StreamRequestHandler):
     # ack – это добавленный обязательный именованный аргумент.
     # *args, **kwargs – это любые обычные предоставленные параметры
     # (которые переданы)
@@ -21,6 +21,6 @@ class EchoHandler(StreamRequestHandler):
 
 
 
-server = TCPServer(('', 15000), partial(EchoHandler, ack=b'RECEIVED:'))
+server = TCPServer(('', 15000), partial(EchoHandler2, ack=b'RECEIVED:'))
 # server = TCPServer(('', 15000), lambda *args, **kwargs: EchoHandler(*args, ack=b'RECEIVED:', **kwargs))
 server.serve_forever()
